@@ -1,0 +1,38 @@
+< !--index.html -->
+    < !DOCTYPE html>
+        <html lang="en" ng-app="myApp">
+
+        <head>
+            <meta charset="UTF-8">
+            <title>Product and Category Masters</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+            <script src="app.js"></script>
+        </head>
+
+        <body>
+            <div ng-controller="ProductController">
+                <h1>Product Master</h1>
+                <form ng-submit="addProduct()">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" ng-model="newProduct.name" required>
+                    <button type="submit">Add Product</button>
+                </form>
+                <ul>
+                    <li ng-repeat="product in products">{{ product.name }}</li>
+                </ul>
+            </div>
+
+            <div ng-controller="CategoryController">
+                <h1>Category Master</h1>
+                <form ng-submit="addCategory()">
+                    <label for="categoryName">Category Name:</label>
+                    <input type="text" id="categoryName" ng-model="newCategory.name" required>
+                    <button type="submit">Add Category</button>
+                </form>
+                <ul>
+                    <li ng-repeat="category in categories">{{ category.name }}</li>
+                </ul>
+            </div>
+        </body>
+
+        </html>
